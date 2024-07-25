@@ -1,0 +1,24 @@
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+.depth {
+  color: rgb(0, 0, 0);
+}
+
+.value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.border-box {
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.depth-wrapper {
+  display: block;
+}

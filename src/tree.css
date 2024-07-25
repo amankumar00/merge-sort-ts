@@ -1,0 +1,68 @@
+/* src/components/MergeSortTree.css */
+.tree {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.node {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  margin: 10px;
+}
+
+.value {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: lightgray;
+  z-index: 1;
+}
+
+.children {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  position: relative;
+}
+
+.left,
+.right {
+  margin: 0 10px;
+}
+
+.line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 20px;
+  width: 2px;
+  background-color: black;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.line:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 2px;
+  background-color: black;
+}
+
+.line:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 2px;
+  background-color: black;
+}
