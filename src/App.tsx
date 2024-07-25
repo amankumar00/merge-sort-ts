@@ -3,7 +3,6 @@ import "./App.css";
 import { mergeSort } from "./mergesort";
 import LineTo from "react-lineto";
 import * as _ from "lodash";
-import "./index.css";
 import { motion } from "framer-motion";
 
 function App() {
@@ -55,29 +54,36 @@ function App() {
 
   return (
     <div className="flex-col">
-      <form onSubmit={handleSubmit} className="flex flex-col items-center">
+      <p className="py-10 text-blue-100 text-4xl">Merge Sort Visulaiser</p>
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col items-center mx-10"
+      >
         <input
           type="text"
           value={inputValue}
           onChange={handleChange}
           placeholder="Enter numbers separated by commas"
-          className="p-2 border border-gray-300 rounded mb-4"
+          className="border rounded px-2 p-1 mr-2 my-10 w-full"
         />
-        <button type="submit" className="p-2 bg-blue-500 text-white rounded">
+        {/* <div className="my-10 p-10"></div> */}
+        <button
+          type="submit"
+          className="p-1 bg-blue-500 text-white rounded mx-auto my-10"
+        >
           Submit
         </button>
       </form>
       <div className="flex-col">
-        <p>Merge Sort Visual</p>
         {clubbedDepthKeys.map((depth: string, idx: number) => {
           const calcMargin =
             parseInt(depth) >= 0
               ? `${parseInt(depth) * 0.3}rem`
               : `${parseInt(depth) * -0.3}rem`;
-          const calcMinHeight =
-            parseInt(depth) >= 0
-              ? `${parseInt(depth) * 2}rem`
-              : `${parseInt(depth) * -2}rem`;
+          // const calcMinHeight =
+          parseInt(depth) >= 0
+            ? `${parseInt(depth) * 2}rem`
+            : `${parseInt(depth) * -2}rem`;
           return (
             <>
               <motion.div
@@ -85,7 +91,7 @@ function App() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 2 }}
                 className={`value`}
-                style={{ minHeight: calcMinHeight }}
+                style={{ minHeight: `2 rem` }}
               >
                 {clubbedDepthStates[parseInt(depth)].map(
                   (v: any[], lIdx: number) => {
@@ -137,6 +143,7 @@ function App() {
                               zIndex={-1}
                               fromAnchor="bottom center"
                               toAnchor="top center"
+                              delay={1}
                             />
                           </motion.div>
                         );
